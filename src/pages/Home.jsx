@@ -2,12 +2,12 @@ import Navbar from "../components/Navbar";
 import ChatBox from "../components/ChatBox";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import { Scroll } from "lucide-react";
 
 const Home = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-100 via-blue-200 to-purple-100">
       <Navbar />
-
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative flex items-center justify-center py-24 px-6 overflow-hidden">
@@ -20,7 +20,7 @@ const Home = () => {
               Welcome to <span className="text-indigo-700">MediLink AI</span> 💊
             </h1>
             <p className="text-lg sm:text-xl text-gray-700 font-medium">
-              Your intelligent health companion. Describe your symptoms to get smart suggestions, learn about medications, or connect with a medical expert—instantly.
+              Your intelligent health companion. Describe your symptoms to get smart suggestions, learn about medications, or connect with a medical expert instantly.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -40,7 +40,7 @@ const Home = () => {
         </section>
 
         {/* AI Symptom Checker Section */}
-        <section className="py-8 bg-gradient-to-t from-white via-blue-50 to-transparent">
+        <section className="py-2 bg-gradient-to-t from-white via-blue-50 to-transparent">
           <h2 className="text-center text-3xl font-bold text-blue-800 mb-8 drop-shadow">
             Try the AI Symptom Checker <span className="align-middle">👇</span>
           </h2>

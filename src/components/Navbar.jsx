@@ -8,19 +8,12 @@ const Navbar = () => {
           to="/"
           className="text-2xl font-extrabold tracking-tight text-blue-700 flex items-center gap-2"
         >
-          <svg
-            className="w-8 h-8 text-blue-500"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 4v16m8-8H4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <img
+            src="/MediLink-Logo.png"
+            alt="MediLink AI Logo"
+            className="w-8 h-8 object-contain"
+            draggable={false}
+          />
           MediLink <span className="text-blue-400">AI</span>
         </Link>
         <div className="space-x-2 sm:space-x-4 flex items-center">

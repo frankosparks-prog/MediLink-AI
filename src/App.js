@@ -166,6 +166,10 @@ import RegisterLogin from "./pages/RegisterLogin";
 import PatientDashboard from "./pages/PatientDashboard";
 import PatientProfile from "./pages/PatientProfile";
 import ScrollToTop from "./components/scrollTop";
+import Chat from "./pages/Chat";
+import Appointments from "./pages/Appointments";
+import OrderMedication from "./pages/OrderMedication";
+import BookDoctor from "./pages/BookDoctor";
 
 
 
@@ -179,6 +183,10 @@ function App() {
         <Route path="/auth" element={<RegisterLogin />} />
         <Route path="/dashboard" element={<PatientDashboard />} />
         <Route path="/profile" element={<PatientProfile />} />
+        <Route path="/bookdoctor" element={<BookDoctor />} />
+        <Route path="/appointments" element={<Appointments />} />
+        <Route path="/chatbox" element={<Chat />} />
+        <Route path="/ordermedication" element={<OrderMedication />} />
       </Routes>
     </Router>
     </>
