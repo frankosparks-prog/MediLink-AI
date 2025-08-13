@@ -19,12 +19,12 @@ const connectdb = async () => {
     // Check if a default admin already exists
     const existingAdmin = await Admin.findOne({ username });
     if (existingAdmin) {
-      console.log('Default GatePass admin already exists');
+      console.log('Default Admin already exists');
     } else {
       // Create the default admin user
       const admin = new Admin({ username, password });
       await admin.save();
-      console.log('Default GatePass admin user created:', admin);
+      console.log('Default Admin user created:', admin);
     }
   } catch (err) {
     console.log('MongoDB connection error:', err);
