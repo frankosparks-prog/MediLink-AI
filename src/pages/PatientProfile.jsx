@@ -66,8 +66,7 @@ const PatientProfile = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100">
       {/* Header */}
-      <header className="fixed z-30 w-full bg-white/80 backdrop-blur border-b border-blue-100 shadow-sm py-3 px-2 sm:py-4 sm:px-8 flex items-center justify-between">
-        {/* Left: Home/Welcome */}
+      {/* <header className="fixed z-30 w-full bg-white/80 backdrop-blur border-b border-blue-100 shadow-sm py-3 px-2 sm:py-4 sm:px-8 flex items-center justify-between">
         <button
           onClick={() => navigate("/dashboard")}
           className="flex-shrink-0"
@@ -80,7 +79,6 @@ const PatientProfile = () => {
             <span>{user?.name || "Janex Wandera"}</span>
           </h1>
         </button>
-        {/* Center: MediLink AI Brand */}
         <Link
           to="/"
           className="absolute left-1/2 -translate-x-1/2 text-lg xs:text-xl sm:text-2xl font-extrabold tracking-tight text-blue-700 flex items-center gap-1 sm:gap-2"
@@ -94,7 +92,6 @@ const PatientProfile = () => {
           />
           MediLink <span className="text-blue-400">AI</span>
         </Link>
-        {/* Right: Profile & Logout */}
         <div className="flex items-center gap-2 sm:gap-4">
           <button
             onClick={() => navigate("/profile")}
@@ -115,7 +112,7 @@ const PatientProfile = () => {
             <span className="hidden md:inline">Logout</span>
           </button>
         </div>
-      </header>
+      </header> */}
 
       {/* Main content fills available space and stretches full width */}
       <main className="flex-1 flex flex-col items-center justify-start md:pt-28 pt-20 pb-8 px-2 sm:px-4 md:px-8 overflow-y-auto w-full">

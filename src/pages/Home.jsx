@@ -1,8 +1,6 @@
 import Navbar from "../components/Navbar";
 import ChatBox from "../components/ChatBox";
-import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-import { Scroll } from "lucide-react";
 
 const Home = () => {
   return (
@@ -51,8 +49,6 @@ const Home = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import ChatBox from "../components/ChatBox";
 import { useNavigate, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import Footer from "../components/Footer";
 
 const Chat = () => {
   const navigate = useNavigate();
@@ -63,7 +62,6 @@ const Chat = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

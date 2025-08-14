@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { ArrowLeft, CalendarDays, Bell, History, RefreshCcw, FileText } from "lucide-react";
-import Footer from "../components/Footer";
 
 // Example appointment data
 const sampleAppointments = [
@@ -41,8 +40,7 @@ function Appointments() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100">
       {/* Header */}
-      <header className="fixed z-30 w-full bg-white/80 backdrop-blur border-b border-blue-100 shadow-sm py-4 px-2 sm:px-8 flex items-center justify-between">
-        {/* Back Button & Title */}
+      {/* <header className="fixed z-30 w-full bg-white/80 backdrop-blur border-b border-blue-100 shadow-sm py-4 px-2 sm:px-8 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <button
             onClick={() => navigate(-1)}
@@ -56,7 +54,6 @@ function Appointments() {
             Appointments
           </h1>
         </div>
-        {/* MediLink AI Brand on far right */}
         <Link
           to="/"
           className="text-lg xs:text-xl sm:text-2xl font-extrabold text-blue-700 flex items-center gap-1 sm:gap-2"
@@ -70,7 +67,7 @@ function Appointments() {
           />
           MediLink <span className="text-blue-400">AI</span>
         </Link>
-      </header>
+      </header> */}
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col items-center justify-start md:pt-28 pt-20 pb-8 px-2 sm:px-4 md:px-8 w-full">
@@ -162,7 +159,6 @@ function Appointments() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

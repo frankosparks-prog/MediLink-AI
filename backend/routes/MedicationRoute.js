@@ -1,8 +1,8 @@
 // routes/medicationRoutes.js
-import express from "express";
-import Medication from "../models/Medication.js";
-import MedicationOrder from "../models/MedicationOrder.js";
-import { verifyToken } from "../middleware/auth.js";
+const express = require("express");
+const Medication = require("../models/Medication.js");
+const MedicationOrder = require("../models/MedicationOrder.js");
+const { authenticate } = require("../middleware/AuthMiddleware.js");
 
 const router = express.Router();
 
@@ -32,7 +32,7 @@ router.get("/", async (req, res) => {
 /**
  * 📌 Place medication order
  */
-router.post("/order", verifyToken, async (req, res) => {
+router.post("/order", authenticate, async (req, res) => {
   try {
     const { items, deliveryAddress } = req.body;
 
@@ -99,7 +99,7 @@ router.post("/order", verifyToken, async (req, res) => {
 /**
  * 📌 Get logged-in patient's orders
  */
-router.get("/my-orders", verifyToken, async (req, res) => {
+router.get("/my-orders", authenticate, async (req, res) => {
   try {
     const orders = await MedicationOrder.find({ patient: req.user.id })
       .populate("items.medication", "name price description category image")
@@ -112,4 +112,4 @@ router.get("/my-orders", verifyToken, async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;

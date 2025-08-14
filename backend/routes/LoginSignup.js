@@ -11,7 +11,10 @@ const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
 router.post('/signup', async (req, res) => {
   try {
     const { username, email, password, role, profile } = req.body;
-
+    
+ if (!email || !password) {
+      return res.status(400).json({ message: 'Email and password are required' });
+    }
     // Check if user exists
     const existing = await User.findOne({ $or: [{ email }, { username }] });
     if (existing) {

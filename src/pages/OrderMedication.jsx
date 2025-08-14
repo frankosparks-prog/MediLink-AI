@@ -9,8 +9,6 @@ import {
   X,
 } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
-import Footer from "../components/Footer";
-
 const medicationData = [
   { id: 1, name: "Paracetamol", price: 5, description: "Pain reliever", category: "Painkillers" },
   { id: 2, name: "Amoxicillin", price: 12, description: "Antibiotic", category: "Antibiotics" },
@@ -66,8 +64,7 @@ const OrderMedication = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100">
       {/* Header */}
-      <header className="fixed z-30 w-full bg-white/80 backdrop-blur border-b border-blue-100 shadow-sm py-4 px-2 sm:px-8 flex items-center justify-between">
-        {/* Back Button & Title */}
+      {/* <header className="fixed z-30 w-full bg-white/80 backdrop-blur border-b border-blue-100 shadow-sm py-4 px-2 sm:px-8 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <button
             onClick={() => navigate(-1)}
@@ -83,7 +80,6 @@ const OrderMedication = () => {
             Order Medication
           </h1>
         </div>
-        {/* MediLink AI Brand on far right */}
         <Link
           to="/"
           className="text-lg xs:text-xl sm:text-2xl font-extrabold text-blue-700 flex items-center gap-1 sm:gap-2"
@@ -97,7 +93,7 @@ const OrderMedication = () => {
           />
           MediLink <span className="text-blue-400">AI</span>
         </Link>
-      </header>
+      </header> */}
 
       {/* Floating Cart Icon */}
       <button
@@ -263,7 +259,6 @@ const OrderMedication = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

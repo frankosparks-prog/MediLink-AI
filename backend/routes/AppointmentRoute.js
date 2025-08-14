@@ -1,8 +1,8 @@
 // routes/appointments.js
-import express from "express";
-import Appointment from "../models/Appointment.js";
-import User from "../models/User.js";
-import { verifyToken } from "../middleware/auth.js";
+const express = require("express");
+const Appointment = require("../models/Appointment.js");
+const User = require("../models/User.js");
+const { authenticate } = require("../middleware/AuthMiddleware.js");
 
 const router = express.Router();
 
@@ -35,7 +35,7 @@ router.get("/doctors", async (req, res) => {
 /**
  * 📌 Book an appointment
  */
-router.post("/", verifyToken, async (req, res) => {
+router.post("/", authenticate, async (req, res) => {
   try {
     const { doctorId, specialty, date, time, notes } = req.body;
 
@@ -50,7 +50,7 @@ router.post("/", verifyToken, async (req, res) => {
     }
 
     const appointment = new Appointment({
-      patient: req.user.id, // from verifyToken
+      patient: req.user.id, // from authenticate
       doctor: doctorId,
       specialty,
       date,
@@ -71,7 +71,7 @@ router.post("/", verifyToken, async (req, res) => {
 /**
  * 📌 Get logged-in patient's appointments
  */
-router.get("/my", verifyToken, async (req, res) => {
+router.get("/my", authenticate, async (req, res) => {
   try {
     const appointments = await Appointment.find({ patient: req.user.id })
       .populate("doctor", "name specialty location image")
@@ -83,4 +83,4 @@ router.get("/my", verifyToken, async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;

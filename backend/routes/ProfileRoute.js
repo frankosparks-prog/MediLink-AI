@@ -1,10 +1,10 @@
 // routes/profile.js
-import express from "express";
-import User from "../models/User.js";
-import Appointment from "../models/Appointment.js";
-import MedicationHistory from "../models/MedicationHistory.js";
-import MedicationOrder from "../models/MedicationOrder.js";
-import SymptomRecord from "../models/SymptomRecord.js";
+const express = require("express");
+const User = require("../models/User.js");
+const Appointment = require("../models/Appointment.js");
+const MedicationHistory = require("../models/MedicationHistory.js");
+const MedicationOrder = require("../models/MedicationOrder.js");
+const SymptomRecord = require("../models/SymptomRecords.js");
 
 const router = express.Router();
 
@@ -51,4 +51,4 @@ router.get("/:patientId", async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;

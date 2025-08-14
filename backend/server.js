@@ -14,6 +14,14 @@ const mail = require("./routes/SendMail.js");
 const sms = require("./routes/SmsRoute.js");
 const visitor = require("./routes/VisitorRoutes.js");
 const auth = require("./routes/LoginSignup.js");
+const testimonials = require("./routes/TestimonialsRoute.js");
+const faq = require("./routes/FAQRoute.js");
+const mpesaRoutes = require("./routes/MpesaRoute.js");
+const profile = require("./routes/ProfileRoute.js");
+const medication = require("./routes/MedicationRoute.js");
+const appointments = require("./routes/AppointmentRoute.js");
+const chat = require("./routes/aiRoute.js");
+const loginSignup = require("./routes/LoginSignup.js");
 const errorHandler = require("./middleware/Errorhandler.js");
 
 dotenv.config();
@@ -69,6 +77,16 @@ app.use("/api/sms", sms); // File upload routes
 app.use("/api/admin", AdminAuth); // Admin Auth routes
 app.use("/api/visitors", visitor); // Only authenticated users can track 
 app.use("/api/auth", auth); // Authentication routes
+app.use("/api/upload", Uploads); // Image upload route
+app.use('/api/contact', mail); // Contact form route
+app.use("/api/testimonials", testimonials); // Testimonials routes
+app.use("/api/faq", faq); // FAQ routes
+app.use("/api/mpesa", mpesaRoutes); // M-Pesa routes
+app.use("api/profile", profile); // Profile routes
+app.use("/api/medication", medication); 
+app.use("/api/appointments", appointments); // Appointments routes
+app.use("/api/chat", chat); // Chat routes
+app.use("/api/loginSignup", loginSignup); 
 
 // Graceful Shutdown
 process.on("SIGINT", () => {
